@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening Texnikumim - Litsey</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Mening Texnikumim</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Asosiy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Men haqimda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Xizmatlar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Aloqa</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Asosiy bo'lim -->
+    <header class="text-center py-5 bg-light">
+        <div class="container">
+            <h1 class="display-4">Xush kelibsiz Mening Texnikumim saytiga</h1>
+            <p class="lead">Zamonaviy o'qish imkoniyatlari va yuksak bilimlar uchun bizga qo'shiling.</p>
+        </div>
+    </header>
+
+    <!-- Men haqimda bo'limi -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center">
+                    <img src="avatar.jpg" alt="Men haqimda" class="img-fluid rounded-circle mb-4" width="200">
+                    <h2>Babajanova Umida</h2>
+                    <p class="lead">Men hemisga 5-nomerda turaman.Babajanova Umida Yangiboyevna  Qoraqalpogʻiston respublikasi Amudaryo tumani Qilichboz OFY da .Oilaliman 3-nafar farzandim bor.Turmush oʻrtogʻim bilan baxtli saodatli hayot kechirmoqdamiz.Farzantlarim Feruza Navroʻzoy Bunyodbekning gʻamxoʻr onajonisiman.Maktabda kutubxonachi lavozimiga ishlayman.Turmush oʻrtogʻim Yakka tadbirkor boʻlib ishlaydi.Odiy oilada baxtli xayot kechiramiz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Xizmatlar bo'limi -->
+    <section id="services" class="bg-light py-5">
+        <div class="container text-center">
+            <h2>Xizmatlarimiz</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://yuz.uz/imageproxy/1200x/https://yuz.uz/file/news/7d9ce7df8e78b7231b87f25d02b49f57.jpg" class="card-img-top" alt="Xizmat 1">
+                        <div class="card-body">
+                            <h5 class="card-title">O'qitish Xizmatlari</h5>
+                            <p class="card-text">O'quvchilarga sifatli ta'lim berish uchun zamonaviy usullarni qo'llaymiz.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://yuz.uz/imageproxy/1200x/https://yuz.uz/file/news/7d9ce7df8e78b7231b87f25d02b49f57.jpg" class="card-img-top" alt="Xizmat 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Professional Kurslar</h5>
+                            <p class="card-text">Turli kasb-hunarlarni o'rganish imkoniyatlari taqdim etiladi.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="https://yuz.uz/imageproxy/1200x/https://yuz.uz/file/news/7d9ce7df8e78b7231b87f25d02b49f57.jpg" class="card-img-top" alt="Xizmat 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Maxsus Dasturlar</h5>
+                            <p class="card-text">O'quvchilar uchun maxsus tayyorlangan dasturlarni taklif etamiz.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript - Intersection Observer yordamida animatsiya qo'shish
+document.addEventListener("DOMContentLoaded", function() {
+    // Kartalarni tanlash
+    const cards = document.querySelectorAll('.card');
+
+    // Intersection Observer'ni yaratish
+    const observerOptions = {
+        root: null, // Root - ekran
+        rootMargin: '0px', // Chegaralar
+        threshold: 0.2 // 20% kartaning ko'rinishi kerak
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Karte ko'rinadigan bo'lsa, unga "visible" klassini qo'shish
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target); // Bir marta ko'ringanidan so'ng kuzatishni to'xtatish
+            }
+        });
+    }, observerOptions);
+
+    // Har bir kartani kuzatish
+    cards.forEach(card => {
+        observer.observe(card);
+    });
+});
+
+    </script>
+
+    <!-- Aloqa bo'limi -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2>Aloqa</h2>
+            <p class="lead">Biz bilan bog'lanish uchun quyidagi ma'lumotlarga murojaat qiling:</p>
+            <p>Email: info@texnikum.uz</p>
+            <p>Telefon: +998 99 999 99 99</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary text-white text-center py-4">
+        <p>&copy; 2024 Mening Texnikumim. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

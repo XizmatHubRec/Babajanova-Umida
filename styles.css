@@ -1,0 +1,84 @@
+/* umumiy stil */
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+footer {
+    background-color: #007bff;
+}
+
+/* responsive dizayn */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .card-img-top {
+        height: 150px;
+    }
+}
+/* umumiy stil */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-image: url('https://tsul.uz/front_assets/assets/img/branches/6.png'); /* Rasmning manzili */
+    background-size: cover;  /* Rasmni butun blokga to'liq moslashtirish */
+    background-position: center center;  /* Rasmni markazga joylashtirish */
+    height: 100vh;  /* Ekranning to'liq balandligini olish */
+    color: white;  /* Matn rangini oq qilish */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Matnni aniqroq qilish uchun soya */
+}
+
+header p {
+    font-size: 1.25rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Matnni aniqroq qilish uchun soya */
+}
+
+/* boshqa bo'limlar uchun umumiy stil */
+section {
+    padding: 50px 0;
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+/* Animatsiya uchun CSS */
+.card {
+    opacity: 0; /* Boshlang'ich holat - yashirin */
+    transform: translateY(30px); /* Boshlang'ich holat - pastga surilgan */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.card.visible {
+    opacity: 1; /* Ko'rinadigan holat */
+    transform: translateY(0); /* Original holatga qaytish */
+}
